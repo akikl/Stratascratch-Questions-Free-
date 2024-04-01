@@ -1,0 +1,21 @@
+### Question:
+Admin Department Employees Beginning in April or Later
+Find the number of employees working in the Admin department that joined in April or later.
+
+Question:https://platform.stratascratch.com/coding/9845-find-the-number-of-employees-working-in-the-admin-department?code_type=3
+
+
+### MYSQL Solution:
+SELECT COUNT(*) 
+FROM worker
+WHERE department LIKE 'Admin'
+AND MONTH(joining_date)>=4;
+
+
+### Pandas Solution:
+
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+len(worker[(worker['department']=='Admin') & (worker['joining_date'].dt.month>=4)])
